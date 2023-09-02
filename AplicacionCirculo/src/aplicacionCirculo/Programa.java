@@ -24,14 +24,14 @@ public class Programa {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner teclado=new Scanner(System.in); // se agrega para usar el teclado
-		
-		Circulo miCirculo=new Circulo();
-		System.out.println("ingrese el radio del circulo");
-		miCirculo.setRadio(teclado.nextDouble());
-		
-		System.out.println(miCirculo.getArea()); 
-		System.out.println(miCirculo); //llama a mi toString y va a usar lo que pusimos en circulo
+		try (Scanner teclado = new Scanner(System.in)) {
+			Circulo miCirculo=new Circulo();
+			System.out.println("ingrese el radio del circulo");
+			miCirculo.setRadio(teclado.nextDouble());
+			
+			System.out.println(miCirculo.getArea()); 
+			System.out.println(miCirculo); //llama a mi toString y va a usar lo que pusimos en circulo
+		}
 
 	}
 
