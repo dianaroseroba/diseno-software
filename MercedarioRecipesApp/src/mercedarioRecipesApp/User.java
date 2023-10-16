@@ -1,50 +1,54 @@
 package mercedarioRecipesApp;
-import java.util.ArrayList;
-import java.util.List;
-
-@SuppressWarnings("unused")
-enum Type {
-    ADMINISTRATOR,
-    OTHER
+//Enumeración USER_TYPE
+enum USER_TYPE {
+ Administrator,
+ Chef,
+ Other
 }
 
-enum Unit {
-    KG, 
-    LITRE, 
-    PIECE
-}
+//Clase User
 public class User {
-	private String username;
-    private String password;
-    private Type userType;
+ private String userName;
+ private String password;
+ private USER_TYPE userType;
 
-    public boolean authenticate() {
-        // Logic for user authentication
-        return true;
-    }
+ // Constructor por defecto
+ public User() {
+     this.userName = "";
+     this.password = "";
+     this.userType = USER_TYPE.Other; // Asigna un tipo por defecto
+ }
 
-	public String getUsername() {
-		return username;
-	}
+ // Getters y Setters para userName
+ public String getUserName() {
+     return userName;
+ }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+ public void setUserName(String userName) {
+     this.userName = userName;
+ }
 
-	public String getPassword() {
-		return password;
-	}
+ // Getters y Setters para password
+ public String getPassword() {
+     return password;
+ }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+ public void setPassword(String password) {
+     this.password = password;
+ }
 
-	public Type getUserType() {
-		return userType;
-	}
+ // Getters y Setters para userType
+ public USER_TYPE getUserType() {
+     return userType;
+ }
 
-	public void setUserType(Type userType) {
-		this.userType = userType;
-	}
+ public void setUserType(USER_TYPE userType) {
+     this.userType = userType;
+ }
+
+ // Método para autenticar
+ public boolean authenticate(USER_TYPE userType, String password) {
+     return this.userType == userType && this.password.equals(password);
+ }
 
 }

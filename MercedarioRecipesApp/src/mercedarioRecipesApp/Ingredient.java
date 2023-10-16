@@ -2,18 +2,17 @@ package mercedarioRecipesApp;
 
 class Ingredient {
     private String name;
-    private Unit unit;
-    private float valuePerUnit;
+    private int unit;
+    private double valuePerUnit;
     private String purchasePlace;
-    private float caloriesPerUnit;
+    private double caloriesPerUnit;
 
-    public void editIngredient() {
-        // Logic for editing the ingredient
-    }
-
-    public boolean deleteIngredient() {
-        // Logic for deleting the ingredient
-        return true;
+    public Ingredient(String name, int unit, double valuePerUnit, String purchasePlace, double caloriesPerUnit) {
+        this.name = name;
+        this.unit = unit;
+        this.valuePerUnit = valuePerUnit;
+        this.purchasePlace = purchasePlace;
+        this.caloriesPerUnit = caloriesPerUnit;
     }
 
 	public String getName() {
@@ -24,19 +23,19 @@ class Ingredient {
 		this.name = name;
 	}
 
-	public Unit getUnit() {
+	public int getUnit() {
 		return unit;
 	}
 
-	public void setUnit(Unit unit) {
+	public void setUnit(int unit) {
 		this.unit = unit;
 	}
 
-	public float getValuePerUnit() {
+	public double getValuePerUnit() {
 		return valuePerUnit;
 	}
 
-	public void setValuePerUnit(float valuePerUnit) {
+	public void setValuePerUnit(double valuePerUnit) {
 		this.valuePerUnit = valuePerUnit;
 	}
 
@@ -48,11 +47,13 @@ class Ingredient {
 		this.purchasePlace = purchasePlace;
 	}
 
-	public float getCaloriesPerUnit() {
+	public double getCaloriesPerUnit() {
 		return caloriesPerUnit;
 	}
 
-	public void setCaloriesPerUnit(float caloriesPerUnit) {
+	public void setCaloriesPerUnit(double caloriesPerUnit) {
 		this.caloriesPerUnit = caloriesPerUnit;
 	}
+
+    
 }

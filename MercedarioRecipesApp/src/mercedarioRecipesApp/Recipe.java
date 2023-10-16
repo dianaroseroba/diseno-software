@@ -3,64 +3,81 @@ package mercedarioRecipesApp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recipe {
-	private String name;
-    private int preparationTime;
+class Recipe {
+    private String name;
+    private int preparationTime;  // en horas
     private int serves;
-    private List<RecipeIngredient> ingredientList = new ArrayList<>();
+    private List<RecipeIngredient> ingredientList;
     private String preparationDescription;
 
+    public Recipe() {
+        this.ingredientList = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPreparationTime() {
+        return preparationTime;
+    }
+
+    public void setPreparationTime(int preparationTime) {
+        this.preparationTime = preparationTime;
+    }
+
+    public int getServes() {
+        return serves;
+    }
+
+    public void setServes(int serves) {
+        this.serves = serves;
+    }
+
+    public List<RecipeIngredient> getIngredientList() {
+        return ingredientList;
+    }
+
+    public void setIngredientList(List<RecipeIngredient> ingredientList) {
+        this.ingredientList = ingredientList;
+    }
+
+    public String getPreparationDescription() {
+        return preparationDescription;
+    }
+
+    public void setPreparationDescription(String preparationDescription) {
+        this.preparationDescription = preparationDescription;
+    }
+
+    public void addRecipe() {
+        // Implementar según tus necesidades (por ejemplo, añadir esta receta a una lista de recetas en FacadeManager)
+    }
+
     public void editRecipe() {
-        // Logic for editing the recipe
+        // Implementar según tus necesidades
     }
 
     public boolean deleteRecipe() {
-        // Logic for deleting the recipe
-        return true;
+        // Implementar según tus necesidades
+        return false; // Valor de retorno temporal
     }
 
-    public void showPreparation(int serves) {
-        // Logic for displaying the preparation
+    public void prepareRecipe(int serves) {
+        // Implementar según tus necesidades
     }
 
-	public String getName() {
-		return name;
-	}
+    public List<Recipe> viewRecipes() {
+        // Suponiendo que tienes una lista global de recetas en FacadeManager, devolverías esa lista aquí.
+        return null;  // Valor de retorno temporal
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getPreparationTime() {
-		return preparationTime;
-	}
-
-	public void setPreparationTime(int preparationTime) {
-		this.preparationTime = preparationTime;
-	}
-
-	public int getServes() {
-		return serves;
-	}
-
-	public void setServes(int serves) {
-		this.serves = serves;
-	}
-
-	public List<RecipeIngredient> getIngredientList() {
-		return ingredientList;
-	}
-
-	public void setIngredientList(List<RecipeIngredient> ingredientList) {
-		this.ingredientList = ingredientList;
-	}
-
-	public String getPreparationDescription() {
-		return preparationDescription;
-	}
-
-	public void setPreparationDescription(String preparationDescription) {
-		this.preparationDescription = preparationDescription;
-	}
-
+    @Override
+    public String toString() {
+        return name + ", Serves: " + serves;
+    }
 }
