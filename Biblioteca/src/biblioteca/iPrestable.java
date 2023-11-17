@@ -1,8 +1,10 @@
 package biblioteca;
 
 //Definimos la interfaz Prestable
-public interface iPrestable {
-	 void prestar();
+interface Prestable {
+	void prestar();
 	 void devolver();
 	 boolean prestado();
+ 
 }
+
